@@ -187,7 +187,8 @@ where
         self
     }
 
-    fn prepare_request<RE>(self) -> Result<HttpRequest, RequestTokenError<RE, TE>>
+    /// Build a HTTP request for the token request.
+    pub fn prepare_request<RE>(self) -> Result<HttpRequest, RequestTokenError<RE, TE>>
     where
         RE: Error + 'static,
     {
